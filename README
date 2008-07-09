@@ -1,0 +1,38 @@
+TemporarilyLinkable
+===================
+
+Easy.
+
+Just call temporarily_linkable in a model you want to add temporary links to.
+
+Then, when you want to create a temporary link, just call
+	create_temporary_link
+and you've got a temporarily_linkable for the object.
+
+Then, in your model, you have access to the method:
+
+find_by_temporary_token to retrieve your object.
+
+Example
+=======
+
+class User < ActiveRecord::Base
+	temporarily_linkable
+end
+
+@user.create_temporary_link
+
+# account_controller
+def retrieve
+	@user = User.find_by_temporary_token(params[:token])
+end
+
+You can also find the user by active temporary tokens with
+  User.find_by_active_temporary_token(params[:token])
+
+The temporary links expire after one week by default, but the plugin does not require you to handle the expiration date.
+
+Done and done.
+
+
+Copyright (c) 2007 [CitrusByte::Ari Lerner], released under the MIT license

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+test:
+  id: 1
+  username: testuser
+  email: testuser@citrusbyte.com
+  created_at: 2007-08-04 04:40:24
+  updated_at: 2007-08-04 04:40:24
+testy:
+  id: 2
+  username: testy
+  email: testy@citrusbyte.com
+  created_at: 2007-08-04 04:40:24
+  updated_at: 2007-08-04 04:40:24
